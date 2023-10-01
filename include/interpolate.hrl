@@ -1,0 +1,2 @@
+-compile({parse_transform, interpolate}).
+-define(f(String), interpolate:string(String)).
