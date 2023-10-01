@@ -33,7 +33,7 @@ transform(Form) ->
     Form.
 
 interpolate([$~ | T0], State) ->
-    {T1, CS} = collect_control_sequence(T0, [$t, $~]),
+    {T1, CS} = collect_control_sequence(T0, [$~]),
     {T, Args} = collect_arguments(T1, 0, []),
     interpolate(T, State#state{
         string = [lists:reverse(CS) | State#state.string],
@@ -46,6 +46,12 @@ interpolate([], State) ->
 
 collect_control_sequence([$[ |  T], Acc) ->
     {T, Acc};
+collect_control_sequence([$s | T], Acc) ->
+    collect_control_sequence(T, [$s, $t | Acc]);
+collect_control_sequence([$c | T], Acc) ->
+    collect_control_sequence(T, [$c, $t | Acc]);
+collect_control_sequence([$p | T], Acc) ->
+    collect_control_sequence(T, [$p, $t | Acc]);
 collect_control_sequence([H | T], Acc) ->
     collect_control_sequence(T, [H | Acc]).
 

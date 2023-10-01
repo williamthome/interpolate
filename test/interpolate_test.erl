@@ -15,16 +15,20 @@ interpolate_test() ->
 
     Map = #{a => a, b => b},
 
+    Float = 3.14159265,
+
     Result0 = ?f("The sum of ~p[X] and ~p[Y] is ~p[X+Y]"),
     Result1 = ?f("~Kp[reversed, Map]"),
     Result2 = ?f("~p[[1,2,3]]"),
     Result3 = ?f("¥£€$¢₡₢₣₤₥₦₧₨₩₪₫₭₮₯₹"),
     Result4 = ?f("😊"),
+    Result5 = ?f("~*.*.*f[9, 5, $*, Float]"),
 
     [
         ?assertEqual(<<"The sum of 1 and 1 is 2"/utf8>>, Result0),
         ?assertEqual(<<"#{b => b,a => a}"/utf8>>, Result1),
         ?assertEqual(<<"[1,2,3]"/utf8>>, Result2),
         ?assertEqual(<<"¥£€$¢₡₢₣₤₥₦₧₨₩₪₫₭₮₯₹"/utf8>>, Result3),
-        ?assertEqual(<<"😊"/utf8>>, Result4)
+        ?assertEqual(<<"😊"/utf8>>, Result4),
+        ?assertEqual(<<"**3.14159"/utf8>>, Result5)
     ].
