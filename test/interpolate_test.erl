@@ -1,3 +1,9 @@
+%%%-----------------------------------------------------------------------------
+%%% @author William Fank Thomé [https://github.com/williamthome]
+%%% @copyright 2023 William Fank Thomé
+%%% @doc Interpolate test module.
+%%% @end
+%%%-----------------------------------------------------------------------------
 -module(interpolate_test).
 
 -include("interpolate.hrl").

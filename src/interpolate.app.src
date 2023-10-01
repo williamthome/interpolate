@@ -1,5 +1,5 @@
 {application, interpolate,
- [{description, "An OTP library"},
+ [{description, "An Erlang library to interpolate strings"},
   {vsn, "0.1.0"},
   {registered, []},
   {applications,

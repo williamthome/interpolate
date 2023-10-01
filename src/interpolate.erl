@@ -1,3 +1,9 @@
+%%%-----------------------------------------------------------------------------
+%%% @author William Fank Thomé [https://github.com/williamthome]
+%%% @copyright 2023 William Fank Thomé
+%%% @doc Interpolate module.
+%%% @end
+%%%-----------------------------------------------------------------------------
 -module(interpolate).
 
 -export([string/1]).
