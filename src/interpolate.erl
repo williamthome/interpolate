@@ -52,6 +52,12 @@ collect_control_sequence([$c | T], Acc) ->
     collect_control_sequence(T, [$c, $t | Acc]);
 collect_control_sequence([$p | T], Acc) ->
     collect_control_sequence(T, [$p, $t | Acc]);
+collect_control_sequence([$P | T], Acc) ->
+    collect_control_sequence(T, [$P, $t | Acc]);
+collect_control_sequence([$w | T], Acc) ->
+    collect_control_sequence(T, [$w, $t | Acc]);
+collect_control_sequence([$W | T], Acc) ->
+    collect_control_sequence(T, [$W, $t | Acc]);
 collect_control_sequence([H | T], Acc) ->
     collect_control_sequence(T, [H | Acc]).
 
